@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import { Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom';
+import Product from './Products/Products';
+import Home from './Home/Home';
 
 function App() {
 
@@ -12,6 +15,7 @@ function App() {
   }
 
   return (
+    <Router>
     <div className="grid-container">
       <head>
         <link rel="stylesheet" href="style.css" />
@@ -24,8 +28,8 @@ function App() {
             <a href="index.htm">Space Sander</a>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
-            <a href="signin.html">Sign In</a>
+            <Link to="/">Home</Link>
+            <Link to="/catalog">Catalog</Link>
           </div>
         </header>
         <aside className="sidebar">
@@ -42,69 +46,19 @@ function App() {
           </ul>
         </aside>
         <main className="main">
-          <div className="content">
-            <ul className="products">
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-              <li>
-                <div className="product">
-                  <img className="product-image" src="images/d1.jpg" alt="product" />
-                  <div className="product-name">
-                    <a href="product.html">Slim Shirt</a>
-                  </div>
-                  <div className="product-brand">Nike</div>
-                  <div className="product-price">$60</div>
-                  <div className="product-rating">4.5 Stars (10 Reviews)</div>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/catalog">
+              <Product />
+            </Route>
+          </Switch>
         </main>
         <footer className="footer">&copy; 2021 Space Sander</footer>
       </body>
     </div>
+    </Router>
   );
 }
 
