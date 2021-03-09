@@ -3,6 +3,7 @@ import './App.css';
 import { Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 import Product from './Products/Products';
 import Home from './Home/Home';
+import data from './Products/data';
 
 function App() {
 
@@ -14,6 +15,24 @@ function App() {
     document.querySelector(".sidebar")?.classList.remove("open");
   }
 
+  <div className="content">
+    <ul className="products">
+      {
+        data.products.map(product =>
+          <li>
+            <div className="product">
+              <img className="product-image" src={product.imageUrl} alt="product" />
+              <div className="product-name">
+                <a href="product.html">{product.name}</a>
+              </div>
+              <div className="product-brand">{product.brand}</div>
+              <div className="product-price">{product.price}</div>
+              <div className="product.rating">{product.rating}Stars({product.numberOfReviews} Reviews)</div>
+            </div>
+          </li>)
+      }
+    </ul>
+  </div>
   return (
     <Router>
     <div className="grid-container">
@@ -59,7 +78,7 @@ function App() {
       </body>
     </div>
     </Router>
-  );
+);
 }
 
 export default App;
