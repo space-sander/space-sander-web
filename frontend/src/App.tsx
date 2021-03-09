@@ -3,8 +3,9 @@ import './App.css';
 import { Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 import Product from './Products/Products';
 import Home from './Home/Home';
-import Orders from './Orders/Orders'
+import Orders from './Orders/Orders';
 import data from './Products/data';
+import OrderDetail from './Orders/OrderDetails';
 
 function App() {
 

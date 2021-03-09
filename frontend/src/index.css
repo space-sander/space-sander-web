@@ -132,7 +132,7 @@ a:hover {
 .order-header {
   display: flex;
   justify-content: space-between;
-  align items: flex-start;
+  align-items: flex-start;
 }
 
 .content-margined {
