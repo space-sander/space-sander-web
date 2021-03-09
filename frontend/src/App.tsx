@@ -15,36 +15,15 @@ function App() {
     document.querySelector(".sidebar")?.classList.remove("open");
   }
 
-  <div className="content">
-    <ul className="products">
-      {
-        data.products.map(product =>
-          <li>
-            <div className="product">
-              <img className="product-image" src={product.imageUrl} alt="product" />
-              <div className="product-name">
-                <a href="product.html">{product.name}</a>
-              </div>
-              <div className="product-brand">{product.brand}</div>
-              <div className="product-price">{product.price}</div>
-              <div className="product.rating">{product.rating}Stars({product.numberOfReviews} Reviews)</div>
-            </div>
-          </li>)
-      }
-    </ul>
-  </div>
+  
   return (
     <Router>
     <div className="grid-container">
-      <head>
-        <link rel="stylesheet" href="style.css" />
-        <title>Space Sander</title>
-      </head>
-      <body>
-        <header className="header">
+      <header className="header">
           <div className="brand">
-            <button onClick={openMenu}>&#9776;</button>
-            <a href="index.htm">Space Sander</a>
+          <button onClick={openMenu}>&#9776;</button>
+          <a href="index.htm">Space Sander</a>
+        
           </div>
           <div className="header-links">
             <Link to="/">Home</Link>
@@ -75,7 +54,7 @@ function App() {
           </Switch>
         </main>
         <footer className="footer">&copy; 2021 Space Sander</footer>
-      </body>
+
     </div>
     </Router>
 );
