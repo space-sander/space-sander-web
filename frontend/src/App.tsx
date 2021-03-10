@@ -61,9 +61,11 @@ function App() {
             </Route>
             <Route path="/order/:id">
               <OrderDetail />
+            </Route>
             <Route exact path="/Payment">
               <Payment />
             </Route>
+
           </Switch>
         </main>
         <footer className="footer">&copy; 2021 Space Sander</footer>
