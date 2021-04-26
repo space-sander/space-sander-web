@@ -2,6 +2,7 @@ import React, {useEffect, useState } from "react";
 import axios from "axios";
 
 interface IProduct {
+  id: number;
   imageUrl: string;
   name: string;
   brand: string;
@@ -32,7 +33,7 @@ function Products() {
     <ul className="products">
       {
         products.map((product) => (
-          <li>
+          <li key={product.id}>
             <div className="product">
               <img className="product-image" src={product.imageUrl} alt="product" />
               <div className="product-name">
