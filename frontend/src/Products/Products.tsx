@@ -12,7 +12,6 @@ interface IProduct {
 
 const emptyProducts: IProduct[] = [];
 function Products() {
-
   const [products, setProducts]: [
     IProduct[],
     (products: IProduct[]) => void
@@ -22,13 +21,14 @@ function Products() {
     axios
       .get<IProduct[]>("https://localhost:5001/catalog",{
           headers: {
-              "Content-Type": "appl;ication/json",
+              "Content-Type": "application/json",
           },
       })
       .then((response) => setProducts(response.data));
   }, []);
 
     return (
+      
     <div className="content">
     <ul className="products">
       {
@@ -41,8 +41,6 @@ function Products() {
               </div>
               <div className="product-brand">{product.brand}</div>
               <div className="product-price">${product.price}</div>
-
-              {/* <div className="product.rating">{product.rating} Stars ({product.numberOfReviews} Reviews)</div> */}
             </div>
           </li>
         ))}

@@ -1,12 +1,14 @@
-import React from 'react';
+//import React from 'react';
 import './App.css';
 import { Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 import Product from './Products/Products';
 import Home from './Home/Home';
 import Orders from './Orders/Orders';
-import data from './Products/data';
+//import data from './Products/data';
 import OrderDetail from './Orders/OrderDetails';
 import Payment from './Payment/Payment';
+import React, {useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
 
